@@ -3,10 +3,9 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 13
+  serializedVersion: 11
   productGUID: f16083b54db8c6b4f9bbee174645fe7b
   AndroidProfiler: 0
-  AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
@@ -41,6 +40,8 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: 9df0c7b855646af44b32757a4ad1dcbb, type: 3}
     duration: 2
+  m_SplashScreenBackgroundLandscape: {fileID: 0}
+  m_SplashScreenBackgroundPortrait: {fileID: 0}
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1280
@@ -50,6 +51,7 @@ PlayerSettings:
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1
+  m_MobileMTRendering: 0
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
@@ -63,21 +65,18 @@ PlayerSettings:
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
-  disableDepthAndStencilBuffers: 0
-  androidBlitType: 0
+  disableDepthAndStencilBuffers: 1
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
-  macRetinaSupport: 1
   runInBackground: 0
   captureSingleScreen: 0
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
-  Force IOS Speakers When Recording: 0
   deferSystemGesturesMode: 0
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
@@ -99,16 +98,21 @@ PlayerSettings:
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
   xboxEnablePIXSampling: 0
-  metalFramebufferOnly: 0
   n3dsDisableStereoscopicView: 0
   n3dsEnableSharedListOpt: 1
-  n3dsEnableVSync: 0
+  n3dsIsEulaRequired: 1
+  n3dsIsProfilerDisabled: 0
+  n3dsMicrophonePolicy: 1
+  n3dsFmodLibrary: 1
+  n3dsVSyncType: 0
+  n3dsStereoViewType: 3
+  n3dsStereoSliderOffMode: 0
   ignoreAlphaClear: 0
   xboxOneResolution: 0
+  xboxOneSResolution: 0
+  xboxOneXResolution: 3
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
-  xboxOneDisableEsram: 0
-  xboxOnePresentImmediateThreshold: 0
   videoMemoryForVertexBuffers: 0
   psp2PowerMode: 0
   psp2AcquireBGM: 1
@@ -140,17 +144,10 @@ PlayerSettings:
     daydream:
       depthFormat: 0
       useSustainedPerformanceMode: 0
-      enableVideoLayer: 0
-      useProtectedVideoMemory: 0
     hololens:
       depthFormat: 1
   protectGraphicsMemory: 0
   useHDRDisplay: 0
-  m_ColorGamuts: 00000000
-  targetPixelDensity: 0
-  resolutionScalingMode: 0
-  androidSupportedAspectRatio: 1
-  androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Standalone: cu.lapy.save_the_scene
   buildNumber: {}
@@ -166,11 +163,11 @@ PlayerSettings:
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  keepLoadedShadersAlive: 0
-  StripUnusedMeshComponents: 0
+  keepLoadedShadersAlive: 1
+  StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
-    m_Bits: 238
+    m_Bits: 0
   iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 7.0
   tvOSSdkVersion: 0
@@ -199,7 +196,6 @@ PlayerSettings:
   tvOSSmallIconLayers: []
   tvOSSmallIconLayers2x: []
   tvOSLargeIconLayers: []
-  tvOSLargeIconLayers2x: []
   tvOSTopShelfImageLayers: []
   tvOSTopShelfImageLayers2x: []
   tvOSTopShelfImageWideLayers: []
@@ -239,9 +235,7 @@ PlayerSettings:
   AndroidKeyaliasName: 
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
-  AndroidEnableTango: 0
   androidEnableBanner: 1
-  androidUseLowAccuracyLocation: 0
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -296,14 +290,10 @@ PlayerSettings:
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []
-  m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
+  webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
-  mobileMTRendering:
-    Android: 1
-    iPhone: 1
-    tvOS: 1
   wiiUTitleID: 0005000011000000
   wiiUGroupID: 00010000
   wiiUCommonSaveSize: 4096
@@ -440,7 +430,6 @@ PlayerSettings:
   switchParentalControl: 0
   switchAllowsScreenshot: 1
   switchAllowsVideoCapturing: 1
-  switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
   switchSupportedNpadStyles: 3
   switchSocketConfigEnabled: 0
@@ -491,6 +480,7 @@ PlayerSettings:
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
   ps4Passcode: 00000000000000000000000000000000
+  ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -577,7 +567,7 @@ PlayerSettings:
   psp2UseLibLocation: 0
   psp2InfoBarOnStartup: 0
   psp2InfoBarColor: 0
-  psp2ScriptOptimizationLevel: 0
+  psp2UseDebugIl2cppLibs: 0
   psmSplashimage: {fileID: 0}
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
@@ -599,7 +589,6 @@ PlayerSettings:
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -637,17 +626,121 @@ PlayerSettings:
   tizenDeploymentTarget: 
   tizenDeploymentTargetType: -1
   tizenMinOSVersion: 1
+  n3dsUseSaveData: 1
   n3dsUseExtSaveData: 0
+  n3dsIsRatingRequired: 0
+  n3dsAllowDirectSDMC: 0
   n3dsCompressStaticMem: 1
+  n3dsEnableCamera: 0
+  n3dsEnableNex: 0
+  n3dsEnablePia: 0
+  n3dsEnableAmiibo: 0
+  n3dsEnableMiiverse: 0
+  n3dsEnableFaceTracking: 0
+  n3dsEnableSaveDataBackup: 1
+  n3dsEnableAutoSave: 0
+  n3dsEnableAutoBoot: 0
+  n3dsRomFSUseCache: 1
   n3dsExtSaveDataNumber: 0x12345
-  n3dsStackSize: 131072
-  n3dsTargetPlatform: 2
+  n3dsStreetPassId: 0
+  n3dsGcPriority: 16
+  n3dsStackSizeK: 1024
+  n3dsDeviceMemory: 32
+  n3dsOldDeviceMemory: 16
+  n3dsReservedVram: 0
+  n3dsInitialManagedHeapSize: 1024
+  n3dsVboSize: 1024
+  n3dsMobiclipLibType: 0
+  n3dsAllocJobsNumBuckets: 8
+  n3dsAllocJobsBucketSize: 64
+  n3dsMaxSessions: 0
+  n3dsSocketMemK: 128
+  n3dsRomFSMaxFiles: 64
+  n3dsRomFSMaxDirs: 16
+  n3dsSaveDataMaxFiles: 16
+  n3dsSaveDataMaxDirs: 4
+  n3dsExtSaveDataMaxFiles: 64
+  n3dsExtSaveDataMaxDirs: 16
+  n3dsTargetPlatform: 3
+  n3dsBuildCategory: 0
+  n3dsOrcsDumpButton: 0
   n3dsRegion: 7
-  n3dsMediaSize: 0
+  n3dsMediaSize: 2
+  n3dsSaveDataSize: 2
   n3dsLogoStyle: 3
+  n3dsDemoIndex: 1
   n3dsTitle: GameName
   n3dsProductCode: 
   n3dsApplicationId: 0xFF3FF
+  n3dsNetLibKey: 
+  n3dsLargeAppKey: 
+  n3dsLongNamesLine1_0: 
+  n3dsLongNamesLine2_0: 
+  n3dsShortNames_0: 
+  n3dsPublisherNames_0: 
+  n3dsLongNamesLine1_1: 
+  n3dsLongNamesLine2_1: 
+  n3dsShortNames_1: 
+  n3dsPublisherNames_1: 
+  n3dsLongNamesLine1_2: 
+  n3dsLongNamesLine2_2: 
+  n3dsShortNames_2: 
+  n3dsPublisherNames_2: 
+  n3dsLongNamesLine1_3: 
+  n3dsLongNamesLine2_3: 
+  n3dsShortNames_3: 
+  n3dsPublisherNames_3: 
+  n3dsLongNamesLine1_4: 
+  n3dsLongNamesLine2_4: 
+  n3dsShortNames_4: 
+  n3dsPublisherNames_4: 
+  n3dsLongNamesLine1_5: 
+  n3dsLongNamesLine2_5: 
+  n3dsShortNames_5: 
+  n3dsPublisherNames_5: 
+  n3dsLongNamesLine1_6: 
+  n3dsLongNamesLine2_6: 
+  n3dsShortNames_6: 
+  n3dsPublisherNames_6: 
+  n3dsLongNamesLine1_7: 
+  n3dsLongNamesLine2_7: 
+  n3dsShortNames_7: 
+  n3dsPublisherNames_7: 
+  n3dsLongNamesLine1_8: 
+  n3dsLongNamesLine2_8: 
+  n3dsShortNames_8: 
+  n3dsPublisherNames_8: 
+  n3dsLongNamesLine1_9: 
+  n3dsLongNamesLine2_9: 
+  n3dsShortNames_9: 
+  n3dsPublisherNames_9: 
+  n3dsLongNamesLine1_10: 
+  n3dsLongNamesLine2_10: 
+  n3dsShortNames_10: 
+  n3dsPublisherNames_10: 
+  n3dsLongNamesLine1_11: 
+  n3dsLongNamesLine2_11: 
+  n3dsShortNames_11: 
+  n3dsPublisherNames_11: 
+  n3dsRatingsInt_0: 0
+  n3dsRatingsInt_1: 0
+  n3dsRatingsInt_2: 0
+  n3dsRatingsInt_3: 0
+  n3dsRatingsInt_4: 0
+  n3dsRatingsInt_5: 0
+  n3dsRatingsInt_6: 0
+  n3dsRatingsInt_7: 0
+  n3dsRatingsInt_8: 0
+  n3dsRatingsString_0: 
+  n3dsRatingsString_1: 
+  n3dsRatingsString_2: 
+  n3dsRatingsString_3: 
+  n3dsCfaFiles: []
+  n3dsManualFile: {fileID: 0}
+  n3dsDiscloseManual: 0
+  n3dsEnableGyroscope: 1
+  n3dsDisableIRSensor: 0
+  n3dsEnableExtraPad: 1
   stvDeviceAddress: 
   stvProductDescription: 
   stvProductAuthor: 
@@ -688,5 +781,4 @@ PlayerSettings:
   projectName: 
   organizationId: 
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
-  disableOldInputManagerSupport: 0
+  enableNewInputSystem: 0
