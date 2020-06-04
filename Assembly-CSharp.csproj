@@ -54,6 +54,7 @@
      <Compile Include="Assets\Codigos\MotorCinema.cs" />
      <Compile Include="Assets\Codigos\MotorSplash.cs" />
      <Compile Include="Assets\Codigos\SistemaSonido.cs" />
+     <Compile Include="Assets\Codigos\TouchScreen.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/N3DSUnity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -20,6 +20,8 @@ public class Controlador : MonoBehaviour {
     public GameObject Final3;
     public GameObject Final4;
 
+    public static int TouchedBtn = -1;
+
     public GameObject FXBomba;
     private GameObject FX;
 
@@ -122,12 +124,12 @@ public class Controlador : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Reinicar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)))
+        if (Reinicar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)) || Input.GetKeyDown("a") || Input.GetKeyDown("b"))
         {
             SceneManager.LoadScene("main");
         }
 
-        if (Continuar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)))
+        if (Continuar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)) || Input.GetKeyDown("a") || Input.GetKeyDown("b"))
         {
             Continuar = false;
             SistemaSonido.instancia.ReinicarMusica();
@@ -138,25 +140,29 @@ public class Controlador : MonoBehaviour {
 
         if (!GameOver)
         {
+            // spawn bombs
             if (SoltarBomba)
             {
                 SoltarBomba = false;
 
                 BN = UnityEngine.Random.Range(0, 4);
                 int X = UnityEngine.Random.Range(-2, 3);
-                Bomba = Instantiate(MisBombas[BN], new Vector2(3 * X, 6), Quaternion.identity);
+                Bomba = Instantiate(MisBombas[BN], new Vector2(3 * X, 6), Quaternion.identity); // apply a rotation to bomb
                 Bomba.GetComponent<Rigidbody2D>().gravityScale = IncrementarGravedad();
 
                 Fallo = false;
                 SistemaSonido.instancia.PlayBombaCayendo();
             }
 
-            if (!Fallo && Input.anyKeyDown)
+            // check if we pressed the correct rotation as the bomb dropping
+            if (!Fallo && (Input.anyKeyDown || TouchedBtn >= 0))
             {
+                Debug.Log("TouchBtn: " + TouchedBtn);
+                 // identify bomb key
                 switch (BN)
                 {
                     case 0:
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow) || TouchedBtn == 2 || Input.GetKeyDown("b"))
                         {
                             DestruirBomba();
                         }
@@ -166,7 +172,7 @@ public class Controlador : MonoBehaviour {
                         }
                         break;
                     case 1:
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.RightArrow))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.RightArrow) || TouchedBtn == 1 || Input.GetKeyDown("a"))
                         {
                             DestruirBomba();
                         }
@@ -176,7 +182,7 @@ public class Controlador : MonoBehaviour {
                         }
                         break;
                     case 2:
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.LeftArrow))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.LeftArrow) || TouchedBtn == 3 || Input.GetKeyDown("y"))
                         {
                             DestruirBomba();
                         }
@@ -186,7 +192,7 @@ public class Controlador : MonoBehaviour {
                         }
                         break;
                     case 3:
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.UpArrow))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.UpArrow) || TouchedBtn == 0 || Input.GetKeyDown("x"))
                         {
                             DestruirBomba();
                         }
@@ -204,7 +210,8 @@ public class Controlador : MonoBehaviour {
     {
         SistemaSonido.instancia.PlayDisparoFallido();
         Bomba.GetComponent<SpriteRenderer>().sprite = BombaRoja;
-        Fallo = true;   
+        Fallo = true;
+        TouchedBtn = -1; // reset
     }
 
     private float IncrementarGravedad()
@@ -217,7 +224,7 @@ public class Controlador : MonoBehaviour {
         return Gravedad;
     }
 
-    private void DestruirBomba()
+    public void DestruirBomba()
     {
         SistemaSonido.instancia.PlayDisparoAcertado();
         FX = Instantiate(FXBomba, Bomba.transform.position, Quaternion.identity);
@@ -227,6 +234,8 @@ public class Controlador : MonoBehaviour {
         GameName = (Convert.ToInt32(GameName) + 1).ToString();
         ActualizarPuntuacion();
         SoltarBomba = true;
+
+        TouchedBtn = -1; // reset
 
         StartCoroutine(DestruirFX());
     }
