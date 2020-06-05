@@ -287,6 +287,18 @@ PlayerSettings:
       m_Width: 512
       m_Height: 512
       m_Kind: 0
+  - m_BuildTarget: Nintendo 3DS
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 12b5e3a69a03eec4daa978b2520d8646, type: 3}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 12b5e3a69a03eec4daa978b2520d8646, type: 3}
+      m_Width: 24
+      m_Height: 24
+      m_Kind: 0
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []
@@ -665,19 +677,19 @@ PlayerSettings:
   n3dsBuildCategory: 0
   n3dsOrcsDumpButton: 0
   n3dsRegion: 7
-  n3dsMediaSize: 2
+  n3dsMediaSize: 0
   n3dsSaveDataSize: 2
   n3dsLogoStyle: 3
   n3dsDemoIndex: 1
-  n3dsTitle: GameName
+  n3dsTitle: SaveTheScene
   n3dsProductCode: 
   n3dsApplicationId: 0xFF3FF
   n3dsNetLibKey: 
   n3dsLargeAppKey: 
-  n3dsLongNamesLine1_0: 
+  n3dsLongNamesLine1_0: Save The Scene
   n3dsLongNamesLine2_0: 
-  n3dsShortNames_0: 
-  n3dsPublisherNames_0: 
+  n3dsShortNames_0: SaveScene
+  n3dsPublisherNames_0: Lapy
   n3dsLongNamesLine1_1: 
   n3dsLongNamesLine2_1: 
   n3dsShortNames_1: 

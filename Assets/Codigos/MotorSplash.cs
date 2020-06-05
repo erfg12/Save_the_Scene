@@ -17,7 +17,7 @@ public class MotorSplash : MonoBehaviour {
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)))
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("a") || Input.GetKeyDown("b")))
         {
             Time.timeScale = 1;
         }

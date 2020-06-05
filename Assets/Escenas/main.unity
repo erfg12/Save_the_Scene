@@ -2045,7 +2045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press X to try again
+  m_Text: Press A to try again
 --- !u!222 &1111176208
 CanvasRenderer:
   m_ObjectHideFlags: 0

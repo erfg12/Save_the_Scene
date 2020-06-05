@@ -44,7 +44,7 @@ public class MotorCinema : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown("a") || Input.GetKeyDown("b") || Input.GetKeyDown("x") || Input.GetKeyDown("y"))
         {
             SceneManager.LoadScene("main");
         }

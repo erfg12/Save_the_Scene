@@ -124,12 +124,12 @@ public class Controlador : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Reinicar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)) || Input.GetKeyDown("a") || Input.GetKeyDown("b"))
+        if (Reinicar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("a") || Input.GetKeyDown("b")))
         {
             SceneManager.LoadScene("main");
         }
 
-        if (Continuar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow)) || Input.GetKeyDown("a") || Input.GetKeyDown("b"))
+        if (Continuar && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("a") || Input.GetKeyDown("b")))
         {
             Continuar = false;
             SistemaSonido.instancia.ReinicarMusica();
@@ -155,7 +155,7 @@ public class Controlador : MonoBehaviour {
             }
 
             // check if we pressed the correct rotation as the bomb dropping
-            if (!Fallo && (Input.anyKeyDown || TouchedBtn >= 0))
+            if (!Fallo && (Input.anyKeyDown || TouchedBtn >= 0 || Input.GetKeyDown("a") || Input.GetKeyDown("b") || Input.GetKeyDown("x") || Input.GetKeyDown("y")))
             {
                 Debug.Log("TouchBtn: " + TouchedBtn);
                  // identify bomb key
